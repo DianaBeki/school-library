@@ -1,8 +1,8 @@
-require './person'
-# methods and variable for the class
+require_relative 'person'
+
 class Teacher < Person
-  def initialize(age, specialization, name = 'Unknown')
-    super(age, name, true)
+  def initialize(age, specialization, name = 'unknown', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
     @specialization = specialization
   end
 

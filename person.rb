@@ -1,14 +1,13 @@
-# class person and its methods
 class Person
-  def initialize(age, name = 'Unknown', _parent_permission: true)
-    @id = Random.rand(1..1000)
+  attr_accessor :name, :age
+  attr_reader :id
+
+  def initialize(age, name = 'Unknown', parent_permission: true)
+    @id = Random.rand(1..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
-
-  attr_accessor :name, :age
-  attr_reader :id
 
   private
 
@@ -16,7 +15,9 @@ class Person
     @age >= 18
   end
 
+  public
+
   def can_use_services?
-    of_age? || parent_permission
+    of_age? || @parent_permission
   end
 end

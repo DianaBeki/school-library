@@ -4,7 +4,7 @@ class List
     when 1
       app.list_books
     when 2
-      app.list_people
+      app.list_persons
     when 3
       app.create_person
     when 4
@@ -12,7 +12,7 @@ class List
     when 5
       app.create_rental
     when 6
-      app.list_rentals
+      app.list_rentals_by_person
     end
   end
 end

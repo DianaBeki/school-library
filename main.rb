@@ -1,11 +1,10 @@
 require_relative 'app'
 require_relative 'option'
 
-app = App.new
-option = List.new
-
 class Main
-  def main(_app, _option)
+  def main
+    app = App.new
+option = List.new
     puts "Welcome to School Library App!\n\n"
 
     loop do
@@ -19,6 +18,7 @@ class Main
       puts '7 - Exit'
 
       user_input = gets.chomp.to_i
+      option.option_list(app, user_input)
       if user_input == 7
         print 'Thank you for using this app!'
         break
@@ -27,4 +27,4 @@ class Main
   end
 end
 
-Main.new.main(app, option)
+Main.new.main

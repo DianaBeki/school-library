@@ -4,7 +4,7 @@ require_relative 'option'
 class Main
   def main
     app = App.new
-option = List.new
+    option = List.new
     puts "Welcome to School Library App!\n\n"
 
     loop do

@@ -5,7 +5,7 @@ app = App.new
 option = List.new
 
 class Main
-  def main(app, option)
+  def main(_app, _option)
     puts "Welcome to School Library App!\n\n"
 
     loop do

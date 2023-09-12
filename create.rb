@@ -15,6 +15,7 @@ def create_person
   add_person(person)
   puts 'Person created successfully.'
 end
+
 def create_student(name, age)
   print 'Has parent permission?[Y/N]: '
   parent_permission = if gets.chomp.match(/(n|N)/)
@@ -24,11 +25,13 @@ def create_student(name, age)
                       end
   Student.new(name, age, parent_permission: parent_permission)
 end
+
 def create_teacher(name, age)
   print 'Specialization: '
   specialization = gets.chomp
   Teacher.new(name, age, specialization)
 end
+
 def create_book
   print 'Title: '
   title = gets.chomp
@@ -38,6 +41,7 @@ def create_book
   add_book(book)
   puts 'Book created successfully.'
 end
+
 def create_rental
   puts 'Select a book from the following list by number: '
   list_books

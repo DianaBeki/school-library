@@ -7,27 +7,34 @@ module SaveData
   def save_books
     return unless File.exist?('./storage_files/books.json')
     return unless @books.any?
+
     books_data = JSON.generate(@books, { max_nesting: false })
     File.write('./storage_files/books.json', books_data)
   end
+
   def save_people
     return unless File.exist?('./storage_files/people.json')
     return unless @people.any?
+
     people_data = JSON.generate(@people, { max_nesting: false })
     File.write('./storage_files/people.json', people_data)
   end
+
   def save_rentals
     return unless File.exist?('./storage_files/rentals.json')
     return unless @rentals.any?
+
     rentals_data = JSON.generate(@rentals, { max_nesting: false })
     File.write('./storage_files/rentals.json', rentals_data)
   end
+
   def save()
     save_books
     save_people
     save_rentals
   end
 end
+
 module LoadData
   def load_books
     books = []
@@ -41,6 +48,7 @@ module LoadData
     end
     books
   end
+
   def load_people
     people = []
     if File.exist?('./storage_files/people.json')
@@ -57,6 +65,7 @@ module LoadData
     end
     people
   end
+
   def load_rentals
     rentals = []
     if File.exist?('./storage_files/rentals.json')
@@ -72,9 +81,11 @@ module LoadData
     end
     rentals
   end
+
   def get_person(id)
     @people.find { |person| person.id == id }
   end
+
   def get_book(id)
     @books.find { |book| book.id == id }
   end

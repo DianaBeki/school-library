@@ -40,7 +40,7 @@ class App
 
   def list_books
     if @books.empty?
-      puts 'Books list is empty! '
+      puts 'Books list is empty!'
     else
       @books.each_with_index do |book, index|
         puts "#{index})- Title: #{book.title}, Author: #{book.author}"
@@ -50,10 +50,14 @@ class App
 
   def list_people
     if @people.empty?
-      puts 'People list is empty! '
+      puts 'People list is empty!'
     else
       @people.each_with_index do |person, index|
-        puts "#{index})- [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        if person.nil?
+          puts "#{index})- [nil] Person is nil"
+        else
+          puts "#{index})- [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        end
       end
     end
   end
@@ -61,10 +65,12 @@ class App
   def list_rentals
     print 'ID of person: '
     id = gets.chomp.to_i
-    puts 'Rentals: '
-    @people.each do |person|
-      next unless person.id == id
+    person = @people.find { |p| p.id == id }
 
+    if person.nil?
+      puts "Person with ID #{id} not found."
+    else
+      puts 'Rentals: '
       person.rentals.each do |rental|
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       end
@@ -101,7 +107,7 @@ class App
         save
         puts 'Thanks for using our school library app, see you soon, bye!'
       else
-        puts "Error friend, wrong input. Sorry I don't make the rules ¯\\(ツ)/¯"
+        puts "Error friend, wrong input. Sorry, I don't make the rules ¯\\(ツ)/¯"
       end
     end
   end

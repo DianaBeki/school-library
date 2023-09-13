@@ -1,6 +1,7 @@
-require '../rental'
-require '../book'
-require '../student'
+require 'rspec'
+require_relative '../rental'
+require_relative '../book'
+require_relative '../student'
 describe Rental do
   context 'Testing the Rental class' do
     book = Book.new('River Between', 'Douglas Ray')

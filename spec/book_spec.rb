@@ -1,5 +1,6 @@
-require '../book'
-require '../student'
+require 'rspec'
+require_relative '../book'
+require_relative '../student'
 
 describe Book do
   context 'Testing the Book class' do

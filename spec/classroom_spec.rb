@@ -1,6 +1,7 @@
-require '../classroom'
-require '../student'
-require '../person'
+require 'rspec'
+require_relative '../classroom'
+require_relative '../student'
+require_relative '../person'
 
 describe Classroom do
   context 'When testing the Classroom class' do

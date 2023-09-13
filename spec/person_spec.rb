@@ -1,6 +1,7 @@
-require '../person'
-require '../book'
-require '../rental'
+require 'rspec'
+require_relative '../person'
+require_relative '../book'
+require_relative '../rental'
 
 describe 'testing person' do
   context 'When testing the Person class' do

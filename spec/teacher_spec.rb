@@ -1,4 +1,5 @@
-require '../teacher'
+require 'rspec'
+require_relative '../teacher'
 describe Teacher do
   context 'When testing the Teacher class' do
     name = 'Dorcas'
